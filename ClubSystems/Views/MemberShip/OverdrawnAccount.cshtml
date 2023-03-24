@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ClubSystems.Models.MemberShip>
+
+@{
+    ViewData["Title"] = "OverdrawnAccount";
+}
+
+<h1>Overdrawn Account</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberShipType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountBalance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Person)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsOverdrawn)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberShipType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountBalance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Person.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsOverdrawn)
+            </td>            
+        </tr>
+}
+    </tbody>
+</table>
